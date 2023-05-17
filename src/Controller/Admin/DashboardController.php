@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 
+use App\Entity\Admin;
 use App\Entity\Genre;
 use App\Entity\Livre;
 use App\Entity\Stock;
@@ -56,13 +57,14 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Genre', 'fa fa-tags', Genre::class);
-        yield MenuItem::linkToCrud('Editeur', 'fas fa-list', Editeur::class);
-        yield MenuItem::linkToCrud('Auteur', 'fa fa-users', Auteur::class);
-        yield MenuItem::linkToCrud('Usure', 'fas fa-list', Usure::class);
-        yield MenuItem::linkToCrud('Stock', 'fas fa-list', Stock::class);
+        yield MenuItem::linkToCrud('Editeur', 'fa-solid fa-print', Editeur::class);
+        yield MenuItem::linkToCrud('Auteur', 'fa-solid fa-pencil', Auteur::class);
+        yield MenuItem::linkToCrud('Usure', 'fa-solid fa-sliders', Usure::class);
+        yield MenuItem::linkToCrud('Stock', 'fa-solid fa-layer-group', Stock::class);
         yield MenuItem::linkToCrud('Livre', 'fa fa-book', Livre::class);
-        yield MenuItem::linkToCrud('Exemplaire', 'fa fa-book', Exemplaire::class);
-        yield MenuItem::linkToCrud('Emprunt', 'fa fa-book', Emprunt::class);
+        yield MenuItem::linkToCrud('Exemplaire', 'fa-solid fa-bookmark', Exemplaire::class);
+        yield MenuItem::linkToCrud('Emprunt', 'fa-solid fa-share-from-square', Emprunt::class);
         yield MenuItem::linkToCrud('Adhérent', 'fa fa-users', Adherent::class);
+        yield MenuItem::linkToCrud('Admin', 'fa-solid fa-user', Admin::class);
     }
 }
